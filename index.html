@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COA Huizen</title>
+    <link rel="stylesheet" href="main.css" media="all"/>
+</head>
+<body>
+    <div class="head">
+            <img src="footer.jpg" alt="">
+        </div>
+    <div class="redcross">
+
+        
+        <form action="submit" method="get" class="inputs">
+            <input type="text" id="firstName" name="firstname" placeholder="Naam" maxlength="30" required />
+            <select onchange='checkIfbike()' name="select" id="select" required>
+                <option value="disabled" disabled selected>-- Kies het item --</option>
+                <option value="Fiets">Fiets</option>
+                <option value="Gym-Kaart">Gym Kaart</option>
+                </select>
+                <input type="number" id="extra" placeholder="Item nummer" maxlength="3" style = "display: none;" required
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);"/>
+            <input type="time" id="birthday" name="birthday" required />
+            <input placeholder="Kamernummer" type="number" name="roomnumber" id="roomnumber" maxlength="3" required 
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);"
+            />
+        </form>
+            <button id="submit">Aanmaken</button>
+        
+        <div class="outputs">
+            <div class="search" >
+                <input onkeyup="getSearchName(this.value)" type="text" id="inputSearchName" placeholder="Zoek op naam.." maxlength="40"/>
+                <input onkeyup="getSearchVnummer(value)" type=" number" id="inputSearchVnummer" placeholder="Zoek op kamernummer.." maxlength="10"/>
+            </div>
+        </div>
+            
+        <div id="deleteAllStorage">
+            
+        </div>
+           
+        
+    </div>
+    <table>
+        <tr>
+            <th class="id">ID</th>
+            <th>Naam</th>
+            <th>Item</th>
+            <th>Item nummer</th>
+            <th>Starttijd</th>
+            <th>Kamernummer</th>
+            <th>Bijwerken</th>
+            <th>Verwijderen</th>
+        </tr>
+
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
+    <span class="up">UP</span>
+    <script src = "index.js"></script>
+</body>
+</html>
