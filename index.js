@@ -94,7 +94,7 @@ deleteAllStorage.onclick = function(){
 }
 //update button function
 function updateData(i){
-
+    extra.style.display = '';
     firstName.value = getData[i].firstName;
     select.value = getData[i].select;
     extra.value = getData[i].extra;
